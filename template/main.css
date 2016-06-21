@@ -1,0 +1,53 @@
+/*Written by Finn Zhan Chen*/
+.navbar {
+    background: rgba(255,255,255, 0.95);
+    font-size: 1.5rem;
+    font-family: "Dancing Script";
+}
+
+
+.navbar li{
+	padding: 0px 0px;
+}
+
+
+
+.navbar-right li {
+	padding: 0px 0px;
+	margin-right: -15px;
+}
+
+#socialmedia {
+	margin-right: 20px;
+	margin-top: 8px;
+
+}
+
+
+
+
+#contact ul li { 
+	display: inline; 
+}
+
+
+footer {
+  margin-top: 50px;
+}
+
+footer p {
+  text-align: center;
+}
+
+.achievement img{
+	margin: 10px;
+}
+
+.achievement {
+	text-align: center;
+}
+
+.featurette{
+	text-align: center;
+}
+
