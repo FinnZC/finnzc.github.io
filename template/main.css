@@ -23,11 +23,8 @@
 
 }
 
-
-
-
-#contact ul li { 
-	display: inline; 
+#socialmedia tr td{
+	padding-right: 10px;
 }
 
 
@@ -51,3 +48,14 @@ footer p {
 	text-align: center;
 }
 
+#skills {
+	background-image: url("../images/background.jpg");
+}
+
+#skills div {
+	padding: 20px;
+}
+
+.listing div {
+	padding: 15px;
+}
