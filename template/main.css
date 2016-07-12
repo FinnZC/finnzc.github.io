@@ -15,10 +15,11 @@
 
 footer {
   margin-top: 50px;
+    text-align: center;
 }
 
 footer p {
-  text-align: center;
+
 }
 
 .achievement {
@@ -123,14 +124,6 @@ footer
     -o-background-size: cover;
 }
 
-
-footer {
-  margin-top: 30px;
-}
-
-footer p {
-  text-align: right;
-}
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
