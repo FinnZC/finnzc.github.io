@@ -6,6 +6,10 @@
     font-family: "Dancing Script";
 }
 
+.brands img{
+  margin-top: 15px;
+}
+
 #socialmedia {
 	margin-top: 8px;
 }
@@ -16,12 +20,10 @@
 
 footer {
   margin-top: 50px;
-    text-align: center;
-}
-
-footer p {
+  text-align: center;
 
 }
+
 
 .achievement {
 	text-align: center;
