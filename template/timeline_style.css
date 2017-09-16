@@ -20,7 +20,7 @@ body {
 .timeline {
   margin: 4em auto;
   position: relative;
-  max-width: 60em;
+  max-width: 65em;
 }
 .timeline:before {
   background-color: black;
@@ -54,7 +54,7 @@ body {
   position: relative;
   top: -1.875em;
   left: 4em;
-  width: 100%;
+  width: 90%;
 }
 .timeline-event-copy h3 {
   font-size: 1.75em;
