@@ -35,6 +35,7 @@ body {
 
 .timeline-event {
   position: relative;
+
 }
 .timeline-event:hover .timeline-event-icon {
   -moz-transform: rotate(-45deg);
@@ -88,6 +89,7 @@ body {
   left: 2em;
   width: 1em;
   height: 1em;
+
 }
 
 .timeline-event-thumbnail {
@@ -105,4 +107,6 @@ body {
   display: inline-block;
   margin-bottom: 1.2em;
   padding: 0.25em 1em 0.2em 1em;
+  margin-top: -30px;
+  margin-bottom: -30px;
 }
