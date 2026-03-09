@@ -2,299 +2,1237 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title >I'm Finn Zhan Chen</title>
-  <meta name="description" content="Personal Website of Finn Zhan Chen | Copyright &copy; 2016-2019 Finn Zhan Chen">
-  <meta name="copyright" content="Finn Zhan Chen">
-  <meta name="keywords" content="Finn Zhan Chen, Chen Zhan Chen,
-  Student at the University of Cambridge, Judge Busienss School, MPhil Management, MPhil Management 2019-20
-  Student at the University of Edinburgh, School of Informatics, BSc Artificial Intelligence,
-  Revolut, Amazon, Ocado Technology,
-  First Generation College Student, First Generation Chinese-Spanish Third Culture Individual">
+  <title>Finn Zhan Chen</title>
+  <meta name="description" content="Finn Zhan Chen – Product leader, AI engineer, and first-generation Chinese-Spanish third culture individual.">
   <meta name="author" content="Finn Zhan Chen">
   <meta property="og:title" content="Finn Zhan Chen"/>
-  <meta property="og:url" content="finzhanchen.com"/>
-
+  <meta property="og:description" content="Product leader at Uncapped. Cambridge & Edinburgh alumnus."/>
+  <meta property="og:url" content="https://finnzhanchen.com"/>
   <link href="./images/zhanchenicon.png" rel="icon">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
-  <link href="./template/bootstrap.min.css" rel="stylesheet">
-  <link href="./template/ie10-viewport-bug-workaround.css" rel="stylesheet">
-  <link href="./template/main.css" rel="stylesheet" type="text/css" >
-  <link href="./template/timeline_style.css" rel="stylesheet">
-  <script src="./template/ie-emulation-modes-warning.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --bg-subtle: #F8FAFC;
+      --bg-card: #ffffff;
+      --hero-bg: #0F172A;
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #94A3B8;
+      --accent: #3B82F6;
+      --accent-hover: #2563EB;
+      --accent-light: #EFF6FF;
+      --border: #E2E8F0;
+      --border-strong: #CBD5E1;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow: 0 4px 16px rgba(0,0,0,.08);
+      --shadow-lg: 0 20px 40px rgba(0,0,0,.10);
+      --nav-h: 64px;
+      --max-w: 1100px;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: -.01em;
+    }
+    .nav-logo img { height: 32px; width: 32px; border-radius: 6px; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255,255,255,.70);
+      font-size: .875rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: color .15s, background .15s;
+    }
+    .nav-links a:hover { color: #fff; background: rgba(255,255,255,.08); }
+    .nav-socials {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-socials a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.07);
+      transition: background .15s;
+    }
+    .nav-socials a:hover { background: rgba(255,255,255,.14); }
+    .nav-socials img { width: 18px; height: 18px; filter: brightness(0) invert(1); opacity: .8; }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px; height: 2px;
+      background: rgba(255,255,255,.8);
+      border-radius: 2px;
+      transition: .3s;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      background: var(--hero-bg);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: var(--nav-h);
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(59,130,246,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -150px; left: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(139,92,246,.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 80px 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .8125rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-tag::before {
+      content: '';
+      display: inline-block;
+      width: 28px; height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    .hero-name {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.08;
+      letter-spacing: -.03em;
+      margin-bottom: 16px;
+    }
+    .hero-name span { color: var(--accent); }
+    .hero-role {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+      color: rgba(255,255,255,.55);
+      margin-bottom: 32px;
+      letter-spacing: -.01em;
+    }
+    .hero-bio {
+      max-width: 580px;
+      font-size: 1rem;
+      color: rgba(255,255,255,.60);
+      line-height: 1.75;
+      margin-bottom: 44px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      font-size: .9375rem;
+      font-weight: 600;
+      transition: background .15s, transform .1s;
+    }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 24px;
+      background: transparent;
+      color: rgba(255,255,255,.75);
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      font-size: .9375rem;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,.16);
+      transition: background .15s, color .15s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,.06); color: #fff; }
+    .hero-stats {
+      margin-top: 72px;
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .hero-stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -.03em;
+    }
+    .hero-stat-label {
+      font-size: .8125rem;
+      color: rgba(255,255,255,.45);
+      margin-top: 2px;
+    }
+
+    /* ── SHARED SECTION STYLES ── */
+    section { padding: 96px 24px; }
+    section:nth-child(even) { background: var(--bg-subtle); }
+    .section-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 20px; height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    .section-heading {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1.0625rem;
+      color: var(--text-secondary);
+      max-width: 540px;
+      margin-bottom: 56px;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .about-photo-wrap {
+      position: relative;
+    }
+    .about-photo {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 20px;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4/5;
+    }
+    .about-photo-accent {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 60%;
+      height: 60%;
+      border-radius: 16px;
+      background: var(--accent-light);
+      border: 3px solid var(--accent);
+      z-index: -1;
+      opacity: .4;
+    }
+    .about-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: var(--accent-light);
+      color: var(--accent-hover);
+      border-radius: 20px;
+      font-size: .8125rem;
+      font-weight: 600;
+    }
+    .about-text p {
+      color: var(--text-secondary);
+      font-size: 1.0625rem;
+      margin-bottom: 16px;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--text-primary); font-weight: 600; }
+    .about-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline-tabs {
+      display: flex;
+      gap: 4px;
+      background: var(--border);
+      border-radius: 10px;
+      padding: 4px;
+      width: fit-content;
+      margin-bottom: 48px;
+    }
+    .tab-btn {
+      padding: 8px 20px;
+      border-radius: 7px;
+      font-size: .875rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      transition: .2s;
+    }
+    .tab-btn.active {
+      background: #fff;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+    }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; }
+
+    .tl {
+      position: relative;
+      padding-left: 28px;
+    }
+    .tl::before {
+      content: '';
+      position: absolute;
+      left: 7px; top: 6px; bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .tl-item {
+      position: relative;
+      padding-bottom: 40px;
+    }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot {
+      position: absolute;
+      left: -25px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2.5px solid var(--border-strong);
+      z-index: 1;
+      transition: border-color .2s;
+    }
+    .tl-item:hover .tl-dot { border-color: var(--accent); }
+    .tl-item.featured .tl-dot {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .tl-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .tl-card:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
+    .tl-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .tl-date {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: .02em;
+    }
+    .badge {
+      font-size: .7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      letter-spacing: .04em;
+    }
+    .badge-work { background: #FEF3C7; color: #92400E; }
+    .badge-edu  { background: #DBEAFE; color: #1E40AF; }
+    .badge-current { background: #DCFCE7; color: #166534; }
+    .tl-org {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+    .tl-role {
+      font-size: .9375rem;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+    .tl-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .tl-bullets li {
+      font-size: .9rem;
+      color: var(--text-secondary);
+      padding-left: 14px;
+      position: relative;
+    }
+    .tl-bullets li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 1.2rem;
+      line-height: 1;
+      top: 1px;
+    }
+
+    /* ── PORTFOLIO ── */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .proj-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .proj-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .proj-icon-wrap {
+      padding: 28px 28px 0;
+    }
+    .proj-icon {
+      width: 56px; height: 56px;
+      border-radius: 12px;
+      object-fit: contain;
+      display: block;
+    }
+    .proj-body { padding: 16px 28px 28px; flex: 1; display: flex; flex-direction: column; }
+    .proj-title {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .proj-desc {
+      font-size: .9rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+    .proj-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .proj-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: .8125rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 5px 10px;
+      background: var(--accent-light);
+      border-radius: 6px;
+      transition: background .15s;
+    }
+    .proj-link:hover { background: #DBEAFE; }
+    .proj-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .proj-tag {
+      font-size: .75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 3px 8px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-lead {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: color .15s;
+    }
+    .contact-item:last-child { border-bottom: none; }
+    .contact-item:hover { color: var(--accent); }
+    .contact-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--bg-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-icon img { width: 20px; height: 20px; }
+    .contact-label {
+      font-size: .8125rem;
+      color: var(--text-muted);
+      margin-bottom: 1px;
+    }
+    .contact-value { font-size: .9375rem; font-weight: 600; }
+    .highlights-card {
+      background: var(--hero-bg);
+      border-radius: 20px;
+      padding: 36px;
+      color: rgba(255,255,255,.8);
+    }
+    .highlights-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .highlight-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .highlight-row:last-child { border-bottom: none; }
+    .highlight-num {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      min-width: 44px;
+    }
+    .highlight-text {
+      font-size: .9rem;
+      color: rgba(255,255,255,.6);
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--hero-bg);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    footer p { font-size: .875rem; color: rgba(255,255,255,.4); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a {
+      font-size: .875rem;
+      color: rgba(255,255,255,.5);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .footer-links a:hover { color: #fff; }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── MOBILE MENU ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0; right: 0;
+      background: #0F172A;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      padding: 16px 24px 24px;
+      z-index: 999;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block;
+      padding: 10px 0;
+      color: rgba(255,255,255,.7);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .mobile-menu a:hover { color: #fff; }
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      section { padding: 64px 20px; }
+      .nav-links, .nav-socials { display: none; }
+      .hamburger { display: flex; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo-wrap { text-align: center; }
+      .about-photo { max-width: 280px; margin: 0 auto; aspect-ratio: 1; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 32px; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .timeline-tabs { flex-wrap: wrap; }
+    }
+  </style>
 </head>
+<body>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#slideshow"><img src="./images/logo.png" style = "margin-top: -15px" height = 50 width = auto alt = "logo created by Finn Zhan Chen"></a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class="link active"><a href="#slideshow"> Home</a></li>
-          <li class = "link"><a href="#aboutme">About</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#present">Present</a></li>
-              <li><a href="#2022">2022</a></li>
-              <li><a href="#2021">2021</a></li>
-              <li><a href="#2021">2020</a></li>
-              <li><a href="#2019">2019</a></li>
-              <li><a href="#2018">2018</a></li>
-              <li><a href="#2017">2017</a></li>
-            </ul>
-          <li class = "link"><a href="#portfolio">Portfolio</a></li>
-          </li>
-        </ul>
-
-        <table id= "socialmedia"  class="nav navbar-nav navbar-right">
-          <tr>
-            <td><a href="https://uk.linkedin.com/in/finnzhanchen" target= "_blank"><img src="./images/linkedin.png" height = 35 width = 35 alt = "LinkedIn Finn Zhan Chen"></a></td>
-            <td><a href="mailto: finnzhanchen@gmail.com" target= "_blank"><img src="./images/mail.png" height = 35 width = 35 alt = "Mail Finn Zhan Chen"></a></td>
-            <td><a href="https://github.com/FinnZC" target= "_blank"><img src="./images/github.png" height = 35 width = 35 alt = "Github Finn Zhan Chen"></a></td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </nav>
-
-  <header id="slideshow" class="carousel slide" data-ride = "carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#slideshow" data-slide-to="0" class="active"></li>
-      <li data-target="#slideshow" data-slide-to="1"></li>
-      <li data-target="#slideshow" data-slide-to="2"></li>
-    </ol>
-
-    <div class="carousel-inner">
-      <div class="item active">
-        <div class="fill" style="background-image: url('./images/oldcol.jpg');" title = "Photo taken by Finn Zhan Chen at Playfair's Library"></div>
-        <div class="carousel-caption">
-          <h1 style="color:white">Hi, I'm Finn Zhan Chen</h1>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="fill" style="background-image:url('./images/arthur.jpg');" title = "Photo taken by Finn Zhan Chen at Arthur´s Seat"></div>
-        <div class="carousel-caption">
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="fill" style="background-image: url('./images/jbs2.jpg');" title ="Source: Cambridge Judge Business School"></div>
-        <div class="carousel-caption" >
-        </div>
-      </div>
-
-    </div>
-
-    <a class="left carousel-control" href="#slideshow" data-slide="prev">
-      <span class="icon-prev"></span>
-    </a>
-    <a class="right carousel-control" href="#slideshow" data-slide="next">
-      <span class="icon-next"></span>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#hero">
+      <img src="./images/logo.png" alt="Finn Zhan Chen">
+      Finn Zhan Chen
     </a>
 
-  </header>
-
-  <div class="container marketing" style= "margin-top: -82px">
-    <hr id = "aboutme" class="featurette-divider">
-    <div class="row featurette">
-
-      <div class="col-md-1"></div>
-      <div class="col-md-5">
-        <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="finnzhanchen"><a class="LI-simple-link" target= "_blank" href='https://uk.linkedin.com/in/finnzhanchen?trk=profile-badge'>Finn Zhan Chen</a></div>
-      </div>
-
-      <div class="col-md-4" style = "margin-top: 30px">
-        <br/>
-        <p>I am intrigued by how strategy, data analytics, and technology drive a company's growth and shape its short-term and long-term objectives. I look forward to creating values in these subjects in my career.
-        </p>
-        <p><br/><b>Interesting facts:</b>
-          I am a first-generation Chinese-Spanish third culture individual and a first-generation college student. I'm fluent in English, Chinese and Spanish and not so fluent in Portuguese.
-        </p>
-      </div>
-      <div class="col-md-2"></div>
-    </div>
-
-    <hr id ="present"  style = "margin-top: 50px">
-    <h2 style = "text-align: center; margin-top: 50px">My Timeline</h2>
-    <ul class="timeline">
-      <li id = "2020" class="timeline-event">
-        <label class="timeline-event-icon education"></label>
-        <div class="timeline-event-copy">
-          <p class="timeline-event-thumbnail">Oct 2019 - Jul 2020</p>
-          <h3>University of Cambridge</h3>
-          <h4>Master of Philosophy in Manangement | Cambridge, England</h4>
-          <ul>
-            <li>•	Graduated with Commendation for achieving +70% in the degree</li>
-            <li>•	Class Representative at Cambridge Judge Business School</li>
-            <li>•	Member of Fitzwilliam College</li>
-          </ul>
-        </div>
-      </li>
-
-      <li class="timeline-event">
-        <label class="timeline-event-icon education"></label>
-        <div class="timeline-event-copy">
-          <p class="timeline-event-thumbnail">Sep 2015 - Jul 2019</p>
-          <h3>University of Edinburgh</h3>
-          <h4>Bachelor of Science in Artificial Intelligence | Edinburgh, Scotland</h4>
-          <ul>
-            <li>•	First-Class Honours, Top of Class Medal (highest overall mark for my degree programme)</li>
-            <li>•	Activities:  Consecutive Class Representative, Brand Representative, Student Ambassador, Exchange Group Leader,  and Science Outreach</li>
-            <li>•	Achievement:
-              <a href= "https://www.freshminds.co.uk/whats-fresh/post/2018/08/06/announcing-the-2019-one-s-to-watch" target="_blank">Ones to Watch 2019</a>,
-              ACCA Future CFO of the Year Finalists,
-              <a href= "https://github.com/mahbubiftekhar/RoboTour" target="_blank">Best Technical Innovation Prize</a>,
-              <a href= "http://www.ed.ac.uk/edinburgh-award" target="_blank">8 Edinburgh Awards</a>,
-              <a href = "http://www.ed.ac.uk/global/go-abroad/go-abroad-fund" target = "_blank">Principal's Go Abroad</a>
-              and <a href = "https://www.erasmusplus.org.uk/" target = "_blank">Erasmus+</a> Scholarship,
-              <a href = "https://www.dofe.org/about-us-2/" target = "_blank">Duke of Edinburgh Award</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-
-        <li id = "2022" class="timeline-event">
-        <label class="timeline-event-icon"></label>
-        <div class="timeline-event-copy">
-          <p class="timeline-event-thumbnail">December 2021 - Current</p>
-          <h3>Uncapped</h3>
-          <h4>Product Owner | London, England</h4>
-        </div>
-      </li>
-      
-      <li id = "2021" class="timeline-event">
-        <label class="timeline-event-icon"></label>
-        <div class="timeline-event-copy">
-          <p class="timeline-event-thumbnail">August 2020 - December 2021</p>
-          <h3>Revolut</h3>
-          <h4>Product Operations Manager | London, England</h4>
-        </div>
-      </li>
-
-      <li id = "2018" class="timeline-event">
-        <label class="timeline-event-icon"></label>
-        <div class="timeline-event-copy">
-          <p id = "2018" class="timeline-event-thumbnail">May 2019 - Sep 2019</p>
-          <h3 >Amazon EU</h3>
-          <h4>Business Intelligence Intern | Luxembourg City, Luxembourg</h4>
-        </div>
-      </li>
-
-      <li class="timeline-event">
-        <label class="timeline-event-icon"></label>
-        <div class="timeline-event-copy">
-          <p class="timeline-event-thumbnail">Jun 2018 - Sep 2018</p>
-          <h3 >Amazon UK</h3>
-          <h4>Business Analyst Intern | Swansea, Wales</h4>
-        </div>
-      </li>
-
-      <li id = "2017" class="timeline-event">
-        <label class="timeline-event-icon"></label>
-        <div class="timeline-event-copy">
-          <p class="timeline-event-thumbnail">May 2018 - Jun 2018</p>
-          <h3>Redshift Strategy Consultants</h3>
-          <h4>Business Analyst Intern | London, England</h4>
-        </div>
-      </li>
-
-      <li class="timeline-event">
-        <label class="timeline-event-icon"></label>
-        <div class="timeline-event-copy">
-          <p class="timeline-event-thumbnail">Jul 2017 - Sep 2017</p>
-          <h3>Ocado Technology</h3>
-          <h4>Software Engineering Intern | Hatfield, England</h4>
-        </div>
-      </li>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#portfolio">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
 
-
-    <!-- Portfolio Gallery Grid -->
-    <h2 style = "text-align: center; margin-top: 50px">Portfolio</h2>
-    <div class="row" id = "portfolio">
-      <div class="column">
-        <div class="content">
-          <img src="./images/stockai.png" class="center icon">
-          <h3><a href= "https://github.com/FinnZC/Stock-AI" target="_blank">Stock AI</a> | <a href= "./papers/Stock_AI.pdf" target="_blank">Report</a></h3>
-          <p>
-          This dissertation focused on building LSTM models that can predict stock price values and trends any number of days in the future of any stock index, public company, or cryptocurrency using historical time series of 52 technical indicators. The models from the dissertation had achieved promising results by beating persistence baseline models and by outperforming 6 out of 7 selected research papers in the same domain.</li>
-          </p>
-        </div>
-      </div>
-      <div class="column">
-        <div class="content">
-        <img src="./images/iot.png" class="center icon">
-          <h3><a href= "https://github.com/FinnZC/IoT_Indoor_Bluetooth_Localisation" target="_blank">IoT Indoor Bluetooth Localisation</a> | <a href= "./papers/IoT.pdf" target="_blank">Report</a></h3>
-          <p>
-            Indoor localisation proposes an immense value proposition to retails stores. An indoor localisation prototype is built based on Bluetooth beacons’ signals. The accuracy of the prototype is evaluated to determine its possible real-world applications, such as location-based advertisements in a shopping mall or supermarket environment
-          </p>
-          </div>
-      </div>
-
-      <div class = "clearfix col-xs col-sm"></div>
-      <div class="column">
-        <div class="content">
-        <img src="./images/onecherry.jpg" class="center icon">
-          <h3><a href= "https://climatelaunchpad.org/finalists/one-cherry/" target="_blank">One Cherry</a> | <a href= "https://onecherry.co.uk/" target="_blank">Website</a></h3>
-          <p>
-            An award-winning social enterprise based in Edinburgh, that aims to make sustainable second-hand shopping easy and convenient for everyone.
-            I was one of the first members in the business model generation stage, and then, my colleague devoted full time to make this business idea a reality that it is now.
-          </p>
-        </div>
-      </div>
-      <div class="column">
-        <div class="content">
-        <img src="./images/robotour.png" class="center icon">
-          <h3><a href= "https://github.com/FinnZC/RoboTour" target="_blank">RoboTour</a> | <a href= "./papers/RoboTour.pdf" target="_blank">Report</a></h3>
-          <p>
-            RoboTour is a robotic tour guide that assists people in environments such as museums or art galleries. The system comprises of an autonomous robotic guide, a purpose-built Android application, and a web server mediating the communication between the two.
-          </p>
-        </div>
-      </div>
-
-      <div class = "clearfix col-xs col-sm"></div>
-      <div class="column">
-        <div class="content">
-        <img src="./images/songgo.png" class="center icon">
-          <h3><a href= "https://github.com/FinnZC/SongGO" target="_blank">Song Go</a> | <a href= "./papers/SongGo.pdf" target="_blank">Report</a></h3>
-          <p>
-            This Android application implements a location-based mobile phone puzzle game which allows users to follow a map and collect words which have been scattered at random around the user's location or preconfigured locations. The words make up the lyrics of a well-known song and the puzzle aspect of the game is to guess the song from the words which have been found.
-          </p>
-        </div>
-      </div>
-
-
+    <div class="nav-socials">
+      <a href="https://uk.linkedin.com/in/finnzhanchen" target="_blank" title="LinkedIn">
+        <img src="./images/linkedin.png" alt="LinkedIn">
+      </a>
+      <a href="mailto:finnzhanchen@gmail.com" title="Email">
+        <img src="./images/gmail.png" alt="Email">
+      </a>
+      <a href="https://github.com/FinnZC" target="_blank" title="GitHub">
+        <img src="./images/github.png" alt="GitHub">
+      </a>
     </div>
-        <!-- END GRID -->
 
-    <div class = "clearfix col-xs col-sm"></div>
-    <div style = "text-align: center;">
-      <footer>
-        <p>Copyright &copy; Finn Zhan Chen 2016-2021</p>
-      </footer>
+    <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
     </div>
   </div>
+</nav>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="./template/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="./template/jquery.min.js"><\/script>')</script>
-  <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-  <script src="./template/bootstrap.min.js"></script>
-  <script src="./template/holder.min.js"></script>
-  <script src="./template/ie10-viewport-bug-workaround.js"></script>
-  <script type="text/javascript" src="./template/main.js"></script>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#experience" onclick="toggleMenu()">Experience</a>
+  <a href="#portfolio" onclick="toggleMenu()">Projects</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Product · AI · Strategy</div>
+    <h1 class="hero-name">Hi, I'm <span>Finn</span><br>Zhan Chen.</h1>
+    <p class="hero-role">Product Manager &amp; AI Engineer</p>
+    <p class="hero-bio">
+      I build products at the intersection of technology and finance. Currently working on
+      revenue-based finance at <strong style="color:rgba(255,255,255,.85)">Uncapped</strong>,
+      helping e-commerce founders grow faster with smarter capital.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="#about">Learn more about me</a>
+      <a class="btn-ghost" href="https://uk.linkedin.com/in/finnzhanchen" target="_blank">LinkedIn ↗</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-value">3+</div>
+        <div class="hero-stat-label">Years at Uncapped</div>
+      </div>
+      <div>
+        <div class="hero-stat-value">2</div>
+        <div class="hero-stat-label">World-class degrees</div>
+      </div>
+      <div>
+        <div class="hero-stat-value">3</div>
+        <div class="hero-stat-label">Languages spoken</div>
+      </div>
+      <div>
+        <div class="hero-stat-value">5+</div>
+        <div class="hero-stat-label">Projects shipped</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+
+      <div class="about-photo-wrap reveal">
+        <img
+          class="about-photo"
+          src="./images/finnzhanchen.jpg"
+          alt="Finn Zhan Chen"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+        >
+        <!-- Fallback if no photo -->
+        <div style="display:none; width:100%; max-width:360px; aspect-ratio:4/5; background:linear-gradient(135deg,#3B82F6,#7C3AED); border-radius:20px; align-items:center; justify-content:center; font-size:5rem; color:white;">F</div>
+        <div class="about-photo-accent"></div>
+      </div>
+
+      <div class="about-text reveal">
+        <div class="section-label">About me</div>
+        <h2 class="section-heading">Building things that matter.</h2>
+
+        <p>
+          I'm a <strong>product leader and AI engineer</strong> passionate about how technology can unlock new forms of value — especially in fintech and e-commerce.
+        </p>
+        <p>
+          I graduated <strong>First-Class with Distinction</strong> in Artificial Intelligence from the University of Edinburgh (Top of Class Medal) and completed an <strong>MPhil in Management at Cambridge Judge Business School</strong>, where I graduated with Commendation.
+        </p>
+        <p>
+          I've worked across multiple continents — building BI systems at <strong>Amazon EU</strong> in Luxembourg, engineering software at <strong>Ocado Technology</strong>, and scaling operations at <strong>Revolut</strong> — before joining <strong>Uncapped</strong> as a product owner.
+        </p>
+        <p>
+          A first-generation Chinese-Spanish third culture individual, I'm fluent in <strong>English, Chinese, and Spanish</strong>, and always curious about the world beyond my doorstep.
+        </p>
+
+        <div class="about-chips">
+          <span class="chip">🎓 Cambridge MPhil</span>
+          <span class="chip">🎓 Edinburgh BSc AI</span>
+          <span class="chip">🌍 Third Culture</span>
+          <span class="chip">🗣 3 Languages</span>
+          <span class="chip">📍 London</span>
+        </div>
+
+        <div class="about-links">
+          <a class="btn-primary" href="https://uk.linkedin.com/in/finnzhanchen" target="_blank">View LinkedIn</a>
+          <a class="btn-ghost" href="https://github.com/FinnZC" target="_blank" style="border-color:var(--border-strong);color:var(--text-secondary)">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE & EDUCATION -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Career</div>
+      <h2 class="section-heading">Experience &amp; Education</h2>
+      <p class="section-sub">A decade of building across tech, finance, and academia.</p>
+    </div>
+
+    <div class="timeline-tabs reveal">
+      <button class="tab-btn active" onclick="switchTab('work', this)">Work</button>
+      <button class="tab-btn" onclick="switchTab('education', this)">Education</button>
+    </div>
+
+    <!-- WORK TAB -->
+    <div class="tab-pane active" id="tab-work">
+      <ul class="tl">
+
+        <li class="tl-item featured">
+          <div class="tl-dot"></div>
+          <div class="tl-card reveal">
+            <div class="tl-meta">
+              <span class="tl-date">Dec 2021 – Present</span>
+              <span class="badge badge-current">Current</span>
+              <span class="badge badge-work">Fintech</span>
+            </div>
+            <div class="tl-org">Uncapped</div>
+            <div class="tl-role">Product Owner · London, England</div>
+            <ul class="tl-bullets">
+              <li>Building revenue-based financing products for e-commerce and SaaS founders</li>
+              <li>Leading product strategy for capital products including Daily Payout and Flex funding</li>
+              <li>Collaborating with engineering, risk, and commercial teams across EU and UK</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card reveal">
+            <div class="tl-meta">
+              <span class="tl-date">Aug 2020 – Dec 2021</span>
+              <span class="badge badge-work">Fintech</span>
+            </div>
+            <div class="tl-org">Revolut</div>
+            <div class="tl-role">Product Operations Manager · London, England</div>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card reveal">
+            <div class="tl-meta">
+              <span class="tl-date">May 2019 – Sep 2019</span>
+              <span class="badge badge-work">E-commerce</span>
+            </div>
+            <div class="tl-org">Amazon EU</div>
+            <div class="tl-role">Business Intelligence Intern · Luxembourg City, Luxembourg</div>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card reveal">
+            <div class="tl-meta">
+              <span class="tl-date">Jun 2018 – Sep 2018</span>
+              <span class="badge badge-work">E-commerce</span>
+            </div>
+            <div class="tl-org">Amazon UK</div>
+            <div class="tl-role">Business Analyst Intern · Swansea, Wales</div>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card reveal">
+            <div class="tl-meta">
+              <span class="tl-date">May 2018 – Jun 2018</span>
+              <span class="badge badge-work">Consulting</span>
+            </div>
+            <div class="tl-org">Redshift Strategy Consultants</div>
+            <div class="tl-role">Business Analyst Intern · London, England</div>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card reveal">
+            <div class="tl-meta">
+              <span class="tl-date">Jul 2017 – Sep 2017</span>
+              <span class="badge badge-work">Engineering</span>
+            </div>
+            <div class="tl-org">Ocado Technology</div>
+            <div class="tl-role">Software Engineering Intern · Hatfield, England</div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- EDUCATION TAB -->
+    <div class="tab-pane" id="tab-education">
+      <ul class="tl">
+
+        <li class="tl-item featured">
+          <div class="tl-dot"></div>
+          <div class="tl-card reveal">
+            <div class="tl-meta">
+              <span class="tl-date">Oct 2019 – Jul 2020</span>
+              <span class="badge badge-edu">Master's</span>
+            </div>
+            <div class="tl-org">University of Cambridge</div>
+            <div class="tl-role">MPhil in Management · Cambridge Judge Business School</div>
+            <ul class="tl-bullets">
+              <li>Graduated with Commendation (70%+)</li>
+              <li>Class Representative at Cambridge Judge Business School</li>
+              <li>Member of Fitzwilliam College</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="tl-item featured">
+          <div class="tl-dot"></div>
+          <div class="tl-card reveal">
+            <div class="tl-meta">
+              <span class="tl-date">Sep 2015 – Jul 2019</span>
+              <span class="badge badge-edu">Bachelor's</span>
+            </div>
+            <div class="tl-org">University of Edinburgh</div>
+            <div class="tl-role">BSc Artificial Intelligence · School of Informatics</div>
+            <ul class="tl-bullets">
+              <li>First-Class Honours, <strong>Top of Class Medal</strong> (highest overall mark)</li>
+              <li>Consecutive Class Representative, Brand Representative, Student Ambassador</li>
+              <li>
+                <a href="https://www.freshminds.co.uk/whats-fresh/post/2018/08/06/announcing-the-2019-one-s-to-watch" target="_blank" style="color:var(--accent)">Ones to Watch 2019</a>,
+                ACCA Future CFO of the Year Finalist,
+                <a href="https://github.com/mahbubiftekhar/RoboTour" target="_blank" style="color:var(--accent)">Best Technical Innovation Prize</a>
+              </li>
+              <li>Erasmus+ Scholarship · Principal's Go Abroad Fund · 8 Edinburgh Awards · Duke of Edinburgh Award</li>
+            </ul>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Projects</div>
+      <h2 class="section-heading">Things I've built.</h2>
+      <p class="section-sub">Selected academic and personal projects spanning AI, mobile, and robotics.</p>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <div class="proj-card reveal">
+        <div class="proj-icon-wrap">
+          <img class="proj-icon" src="./images/stockai.png" alt="Stock AI">
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags">
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">LSTM</span>
+            <span class="proj-tag">Machine Learning</span>
+            <span class="proj-tag">Dissertation</span>
+          </div>
+          <div class="proj-title">Stock AI</div>
+          <p class="proj-desc">
+            LSTM models that predict stock price values and trends any number of days ahead for any stock index, company, or cryptocurrency — using 52 technical indicators. Beat persistence baselines and outperformed 6 of 7 comparable research papers.
+          </p>
+          <div class="proj-links">
+            <a class="proj-link" href="https://github.com/FinnZC/Stock-AI" target="_blank">GitHub ↗</a>
+            <a class="proj-link" href="./papers/Stock_AI.pdf" target="_blank">Report ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-icon-wrap">
+          <img class="proj-icon" src="./images/iot.png" alt="IoT Localisation">
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags">
+            <span class="proj-tag">IoT</span>
+            <span class="proj-tag">Bluetooth</span>
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">Hardware</span>
+          </div>
+          <div class="proj-title">IoT Indoor Bluetooth Localisation</div>
+          <p class="proj-desc">
+            A Bluetooth-beacon-based indoor localisation prototype for retail environments, evaluating accuracy for real-world use cases such as location-based advertising in shopping malls and supermarkets.
+          </p>
+          <div class="proj-links">
+            <a class="proj-link" href="https://github.com/FinnZC/IoT_Indoor_Bluetooth_Localisation" target="_blank">GitHub ↗</a>
+            <a class="proj-link" href="./papers/IoT.pdf" target="_blank">Report ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-icon-wrap">
+          <img class="proj-icon" src="./images/robotour.png" alt="RoboTour">
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags">
+            <span class="proj-tag">Robotics</span>
+            <span class="proj-tag">Android</span>
+            <span class="proj-tag">Best Innovation Prize</span>
+          </div>
+          <div class="proj-title">RoboTour</div>
+          <p class="proj-desc">
+            An autonomous robotic tour guide for museums and galleries. Comprising a robot, purpose-built Android app, and a web server — winner of the Best Technical Innovation Prize.
+          </p>
+          <div class="proj-links">
+            <a class="proj-link" href="https://github.com/FinnZC/RoboTour" target="_blank">GitHub ↗</a>
+            <a class="proj-link" href="./papers/RoboTour.pdf" target="_blank">Report ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-icon-wrap">
+          <img class="proj-icon" src="./images/onecherry.jpg" alt="One Cherry" style="border-radius:50%; object-fit:cover;">
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags">
+            <span class="proj-tag">Social Enterprise</span>
+            <span class="proj-tag">Sustainability</span>
+          </div>
+          <div class="proj-title">One Cherry</div>
+          <p class="proj-desc">
+            An award-winning Edinburgh social enterprise making sustainable second-hand shopping easy and convenient. I was a founding member during the business model generation stage.
+          </p>
+          <div class="proj-links">
+            <a class="proj-link" href="https://climatelaunchpad.org/finalists/one-cherry/" target="_blank">Profile ↗</a>
+            <a class="proj-link" href="https://onecherry.co.uk/" target="_blank">Website ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-icon-wrap">
+          <img class="proj-icon" src="./images/songgo.png" alt="Song Go">
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags">
+            <span class="proj-tag">Android</span>
+            <span class="proj-tag">Location Services</span>
+            <span class="proj-tag">Game</span>
+          </div>
+          <div class="proj-title">Song Go</div>
+          <p class="proj-desc">
+            A location-based mobile puzzle game where players follow a map to collect scattered song lyrics, then guess the song from the words they've found.
+          </p>
+          <div class="proj-links">
+            <a class="proj-link" href="https://github.com/FinnZC/SongGO" target="_blank">GitHub ↗</a>
+            <a class="proj-link" href="./papers/SongGo.pdf" target="_blank">Report ↗</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <div class="section-label reveal">Get in touch</div>
+        <h2 class="section-heading reveal">Let's work together.</h2>
+        <p class="contact-lead reveal">
+          Whether you're interested in fintech product innovation, AI research, or just want to connect — I'd love to hear from you.
+        </p>
+
+        <div class="reveal">
+          <a class="contact-item" href="mailto:finnzhanchen@gmail.com">
+            <div class="contact-icon">
+              <img src="./images/gmail.png" alt="Email">
+            </div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">finnzhanchen@gmail.com</div>
+            </div>
+          </a>
+          <a class="contact-item" href="https://uk.linkedin.com/in/finnzhanchen" target="_blank">
+            <div class="contact-icon">
+              <img src="./images/linkedin.png" alt="LinkedIn">
+            </div>
+            <div>
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value">linkedin.com/in/finnzhanchen</div>
+            </div>
+          </a>
+          <a class="contact-item" href="https://github.com/FinnZC" target="_blank">
+            <div class="contact-icon">
+              <img src="./images/github.png" alt="GitHub">
+            </div>
+            <div>
+              <div class="contact-label">GitHub</div>
+              <div class="contact-value">github.com/FinnZC</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="highlights-card reveal">
+        <h3>Quick facts</h3>
+        <div class="highlight-row">
+          <div class="highlight-num">1st</div>
+          <div class="highlight-text">First-class honours and Top of Class Medal at the University of Edinburgh</div>
+        </div>
+        <div class="highlight-row">
+          <div class="highlight-num">3</div>
+          <div class="highlight-text">Fluent languages: English, Chinese, and Spanish</div>
+        </div>
+        <div class="highlight-row">
+          <div class="highlight-num">3+</div>
+          <div class="highlight-text">Years building revenue-based finance products at Uncapped</div>
+        </div>
+        <div class="highlight-row">
+          <div class="highlight-num">6/7</div>
+          <div class="highlight-text">Research papers outperformed by Stock AI dissertation LSTM models</div>
+        </div>
+        <div class="highlight-row">
+          <div class="highlight-num">🌍</div>
+          <div class="highlight-text">First-generation Chinese-Spanish third culture individual based in London</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 Finn Zhan Chen. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#portfolio">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // Tab switching
+  function switchTab(name, el) {
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Close mobile menu on outside click
+  document.addEventListener('click', (e) => {
+    const menu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.hamburger');
+    if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY + 100;
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
+      if (scrollY >= top && scrollY < bottom) {
+        navLinks.forEach(a => {
+          a.style.color = a.getAttribute('href') === '#' + section.id
+            ? '#fff' : '';
+        });
+      }
+    });
+  }, { passive: true });
+</script>
 </body>
 </html>
