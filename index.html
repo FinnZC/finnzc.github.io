@@ -446,6 +446,8 @@
     .badge-work { background: #FEF3C7; color: #92400E; }
     .badge-edu  { background: #DBEAFE; color: #1E40AF; }
     .badge-current { background: #DCFCE7; color: #166534; }
+    .badge-cert { background: #F3E8FF; color: #7C3AED; }
+    .badge-partial { background: #F1F5F9; color: #64748B; }
     .tl-org {
       font-size: 1.0625rem;
       font-weight: 700;
@@ -850,6 +852,7 @@
     <div class="timeline-tabs reveal">
       <button class="tab-btn active" onclick="switchTab('work', this)">Work</button>
       <button class="tab-btn" onclick="switchTab('education', this)">Education</button>
+      <button class="tab-btn" onclick="switchTab('certifications', this)">Certifications</button>
     </div>
 
     <!-- WORK TAB -->
@@ -972,6 +975,49 @@
               </li>
               <li>Erasmus+ Scholarship · Principal's Go Abroad Fund · 8 Edinburgh Awards · Duke of Edinburgh Award</li>
             </ul>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- CERTIFICATIONS TAB -->
+    <div class="tab-pane" id="tab-certifications">
+      <ul class="tl">
+
+        <li class="tl-item featured">
+          <div class="tl-dot"></div>
+          <div class="tl-card reveal">
+            <div class="tl-meta">
+              <span class="badge badge-cert">Chartered</span>
+              <span class="badge badge-current">Awarded</span>
+            </div>
+            <div class="tl-org">BCS, The Chartered Institute for IT</div>
+            <div class="tl-role">Chartered IT Professional (CITP)</div>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card reveal">
+            <div class="tl-meta">
+              <span class="badge badge-cert">Chartered</span>
+              <span class="badge badge-partial">In Progress</span>
+            </div>
+            <div class="tl-org">Science Council</div>
+            <div class="tl-role">Chartered Scientist (CSci)</div>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card reveal">
+            <div class="tl-meta">
+              <span class="badge badge-cert">Chartered</span>
+              <span class="badge badge-partial">In Progress</span>
+            </div>
+            <div class="tl-org">Engineering Council</div>
+            <div class="tl-role">Chartered Engineer (CEng)</div>
           </div>
         </li>
 
